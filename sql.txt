@@ -1,0 +1,96 @@
+CREATE TABLE `tab_user` (
+ `user_id` int(11) NOT NULL AUTO_INCREMENT,
+ `name` varchar(50) NOT NULL,
+ `email_id` varchar(50) NOT NULL,
+ `address` varchar(50) NOT NULL,
+ `mobile_number` varchar(10) NOT NULL,
+ `fees_paid` int(10) NOT NULL,
+ `dob` date NOT NULL,
+ `weight` int(11) NOT NULL,
+ `height` int(11) NOT NULL,
+ `bmi` varchar(50) NOT NULL,
+ `blood_group` varchar(15) NOT NULL,
+ `admission_date` date NOT NULL,
+ `aadhar_number` varchar(16) NOT NULL,
+ `enrollment_type` varchar(20) NOT NULL,
+ `enrollment_duration` varchar(50) NOT NULL,
+ `ref_name` varchar(50) NOT NULL,
+ `fees_receipt_number` int(11) NOT NULL,
+ `batch_timing` varchar(50) NOT NULL,
+ `gender` varchar(6) NOT NULL,
+ `branch_id` int(11) NOT NULL,
+ `whatsapp_number` varchar(10) NOT NULL,
+ `academy_number` int(11) NOT NULL,
+ `school_company_name` varchar(50) NOT NULL,
+ `school_company_location` varchar(50) NOT NULL,
+ `user_image` varchar(500) NOT NULL,
+ `created_on` datetime NOT NULL,
+ PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1
+
+
+
+
+
+CREATE TABLE `tab_advanced_user_progress` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `freestyle` int(11) NOT NULL,
+ `breast_stroke` int(11) NOT NULL,
+ `butterfly_stroke` int(11) NOT NULL,
+ `backstroke` int(11) NOT NULL,
+ `individual_midlay` int(11) NOT NULL DEFAULT 200,
+ `meter` int(11) NOT NULL,
+ `user_id` int(11) NOT NULL,
+ `created_on` datetime NOT NULL,
+ PRIMARY KEY (`id`),
+ KEY `Foreign Key` (`user_id`),
+ CONSTRAINT `Foreign Key` FOREIGN KEY (`user_id`) REFERENCES `tab_user` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1
+
+
+
+
+CREATE TABLE `tab_diet_details` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `morning_diet` text NOT NULL,
+ `afternoon_diet` text NOT NULL,
+ `evening_diet` text NOT NULL,
+ `night_diet` text NOT NULL,
+ `post_workout_drink` text NOT NULL,
+ `user_id` int(11) NOT NULL,
+ `created_on` datetime NOT NULL,
+ PRIMARY KEY (`id`),
+ KEY `user_id` (`user_id`),
+ CONSTRAINT `tab_diet_details_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `tab_user` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1
+
+
+CREATE TABLE `city` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `city_id` int(11) NOT NULL,
+ `city_name` varchar(50) NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1
+
+
+CREATE TABLE `tab_user_renewal_details` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `user_id` int(11) NOT NULL,
+ `renewal_count` varchar(50) NOT NULL,
+ `renewal_date` date NOT NULL,
+ `renewal_fees` varchar(20) NOT NULL,
+ `renewal_enrollment_duration` varchar(10) NOT NULL,
+ `created_on` datetime NOT NULL,
+ PRIMARY KEY (`id`),
+ KEY `user_id` (`user_id`),
+ CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `tab_user` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1
+
+
+CREATE TABLE `tab_role` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `role_username` varchar(20) NOT NULL,
+ `role_password` varchar(20) NOT NULL,
+ `role_level` int(11) NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1

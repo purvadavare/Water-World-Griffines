@@ -1,0 +1,19 @@
+1) Open Xampp Control Panel and start Apache and Mysql .
+2) Open Chrome Browser type in url localhost/wadiya_park then press enter button.
+3) put username = admin and password = admin
+4) For New student Registration click on Registration from sidebar.
+5) Fill the information of student , all fields are mandatory expect email id.
+6) After filling the form click on save button then all student information page is displayed.
+7) If we want to edit any user information click on edit button then do necessary changes then click on update.
+8) If we want to delete any user click on delete button then click on ok.
+
+
+For filling test results in the form for (level 4 and level 5)
+
+1) Click on advanced batch tab from side bar . if we want to fill result details then click on Time audit sheet.
+2) select name from dropdown and click on go. the form will appear . 
+3) Fill the form and save the form.
+4) If we want to get monthly report for each student then click on monthly report tab under Advanced batch.
+5) select name from dropdown and click on go . enter last date for monthly report and click on generate report button.
+6) if we want to add diet for particular student then click on create diet plan button then select name from dropdown and 	   fill the diet form and save it. similarly if we want to update diet plan for particular student then select name of 		   student from dropdown and do necessary chnages in diet and click on update.
+7) To download diet plan select name from dropdown and click on download button to get the file
